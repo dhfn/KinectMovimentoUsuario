@@ -84,8 +84,8 @@ namespace EsqueletoUsuario.Auxiliar
                 {
                     Vector4 orientacao = esqueletoCompleto.BoneOrientations[JointType.HipCenter].AbsoluteRotation.Quaternion;
 
-                    texto.Text = "Orintacao: X:"+orientacao.X+" Y:"+orientacao.Y+" Z:"+orientacao.Z+"\n"+
-                        "Posicao: X:"+articulacao.Position.X+" Y:"+articulacao.Position.Y+" Z"+articulacao.Position.Z;
+                    texto.Text = "Orintacao: X:"+orientacao.X.ToString("n3")+" Y:"+orientacao.Y.ToString("n3") + " Z:"+orientacao.Z.ToString("n3") + "\n"+
+                        "Posicao: X:"+articulacao.Position.X.ToString("n3") + " Y:"+articulacao.Position.Y.ToString("n3") + " Z"+articulacao.Position.Z.ToString("n3");
                 }
 
                 if (articulacao.JointType == JointType.Spine)
