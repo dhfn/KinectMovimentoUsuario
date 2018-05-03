@@ -97,7 +97,7 @@ namespace EsqueletoUsuario.Auxiliar
                     texto.Text = "" + Math.Round(Util.CalcularProdutoEscalar(quadril, espinha, ombro));
                 }
 
-                    Canvas.SetLeft(texto, deslocamentoHorizontal + 10);
+                Canvas.SetLeft(texto, deslocamentoHorizontal + 10);
                 Canvas.SetTop(texto, deslocamentoVertical);
                 Canvas.SetZIndex(texto, 100);
 
