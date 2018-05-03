@@ -68,7 +68,11 @@ namespace EsqueletoUsuario
             Rastreador<PosePulo> rastreadorPosePulo = new Rastreador<PosePulo>();
             rastreadorPosePulo.MovimentoIdentificado += PosePuloIdentificada;
 
-            Rastreador<PoseAndar> rastreadorPoseAndar = new Rastreador<PoseAndar>();
+            //Rastreador<PoseAndar> rastreadorPoseAndar = new Rastreador<PoseAndar>();
+            //rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
+            //rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
+
+            Rastreador<PoseAndarFrente> rastreadorPoseAndar = new Rastreador<PoseAndarFrente>();
             rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
             rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
 
