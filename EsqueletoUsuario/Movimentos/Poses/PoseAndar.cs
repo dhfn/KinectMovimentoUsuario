@@ -17,7 +17,7 @@ namespace EsqueletoUsuario.Movimentos.Poses
         public PoseAndar()
         {
             this.Nome = "PosePulo";
-            this.QuadroIdentificacao = 20;
+            this.QuadroIdentificacao = 1;
         }
 
         protected override bool PosicaoValida(Skeleton esqueletoUsuario)

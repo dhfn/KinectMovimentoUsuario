@@ -88,7 +88,16 @@ namespace EsqueletoUsuario.Auxiliar
                         "Posicao: X:"+articulacao.Position.X+" Y:"+articulacao.Position.Y+" Z"+articulacao.Position.Z;
                 }
 
-                Canvas.SetLeft(texto, deslocamentoHorizontal + 10);
+                if (articulacao.JointType == JointType.Spine)
+                {
+                    Joint quadril = esqueletoCompleto.Joints[JointType.HipCenter];
+                    Joint espinha = esqueletoCompleto.Joints[JointType.Spine];
+                    Joint ombro = esqueletoCompleto.Joints[JointType.ShoulderCenter];
+
+                    texto.Text = "" + Math.Round(Util.CalcularProdutoEscalar(quadril, espinha, ombro));
+                }
+
+                    Canvas.SetLeft(texto, deslocamentoHorizontal + 10);
                 Canvas.SetTop(texto, deslocamentoVertical);
                 Canvas.SetZIndex(texto, 100);
 
