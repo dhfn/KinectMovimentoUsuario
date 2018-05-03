@@ -11,7 +11,8 @@ namespace EsqueletoUsuario.Movimentos.Poses
 {
     public class PosePulo : Pose
     {
-        double alturaChao;
+        private double alturaChao;
+        public bool novaAlturaChao;
 
         public PosePulo()
         {

@@ -65,9 +65,6 @@ namespace EsqueletoUsuario
             Rastreador<PoseAgachar> rastreadorPoseAgachar = new Rastreador<PoseAgachar>();
             rastreadorPoseAgachar.MovimentoIdentificado += PoseAgacharIdentificada;
 
-            Rastreador<PosePulo> rastreadorPosePulo = new Rastreador<PosePulo>();
-            rastreadorPosePulo.MovimentoIdentificado += PosePuloIdentificada;
-
             //Rastreador<PoseAndar> rastreadorPoseAndar = new Rastreador<PoseAndar>();
             //rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
             //rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
@@ -81,8 +78,8 @@ namespace EsqueletoUsuario
             rastreadorPoseT.MovimentoEmProgresso += PoseTEmProgresso;
 
             rastreadores.Add(rastreadorPoseAgachar);
-            rastreadores.Add(rastreadorPosePulo);
             rastreadores.Add(rastreadorPoseAndar);
+            rastreadores.Add(rastreadorPoseT);
         }
 
         private void PoseTEmProgresso(object sender, EventArgs e)
@@ -105,8 +102,10 @@ namespace EsqueletoUsuario
 
         private void PoseTIdentificada(object sender, EventArgs e)
         {
+            Rastreador<PosePulo> rastreadorPosePulo = new Rastreador<PosePulo>();
+            rastreadorPosePulo.MovimentoIdentificado += PosePuloIdentificada;
 
-            //alturaChao = sender
+            rastreadores.Add(rastreadorPosePulo);
         }
 
         private void PoseAndarEmProgresso(object sender, EventArgs e)
@@ -157,8 +156,12 @@ namespace EsqueletoUsuario
             using (quadro)
             {
                 Skeleton esqueletoUsuario = quadro.ObterEsqueletoUsuario();
-                foreach (IRastreador rastreador in rastreadores)
-                    rastreador.Rastrear(esqueletoUsuario);
+                //foreach (IRastreador rastreador in rastreadores)
+                //    rastreador.Rastrear(esqueletoUsuario);
+                for(int i = 0; i < rastreadores.Count; i++)
+                {
+                    rastreadores.ElementAt(i).Rastrear(esqueletoUsuario);
+                }
 
                 if (chkEsqueleto.IsChecked.HasValue && chkEsqueleto.IsChecked.Value)
                     quadro.DesenharEsqueletoUsuario(kinect, canvasKinect);
