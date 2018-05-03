@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EsqueletoUsuario.Movimentos.Pose">
+    <Position X="4.5" Y="3.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAABAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Movimentos\Pose.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.Poses.PoseAgachar">
+    <Position X="2.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Movimentos\Poses\PoseAgachar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.Poses.PoseAndar">
+    <Position X="5" Y="6.5" Width="2.25" />
+    <InheritanceLine Type="EsqueletoUsuario.Movimentos.Pose" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="5.627" />
+        <Point X="6" Y="6.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAEAA=</HashCode>
+      <FileName>Movimentos\Poses\PoseAndar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.Poses.PosePulo">
+    <Position X="7.75" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Movimentos\Poses\PosePulo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Auxiliar.EsqueletoUsuarioAuxiliar">
+    <Position X="13.5" Y="0.5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAEAAAAAAAAEgAACAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Auxiliar\EsqueletoUsuarioAuxiliar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Auxiliar.Extensao">
+    <Position X="17.75" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Auxiliar\Extensao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.FuncoesBasicas.InicializadorKinect">
+    <Position X="17.75" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAEAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Auxiliar\InicializadorKinect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.FuncoesBasicas.Util">
+    <Position X="13.5" Y="3.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAEAAAAACQgAAAAAAAAAAAAAAIAAAAAAgAA=</HashCode>
+      <FileName>Auxiliar\Util.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.Rastreador&lt;T&gt;" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="10.25" Width="3" />
+    <AssociationLine Name="t" Type="EsqueletoUsuario.Movimentos.Movimento" ManuallyRouted="true">
+      <Path>
+        <Point X="13.969" Y="10.25" />
+        <Point X="13.969" Y="9.273" />
+        <Point X="13.13" Y="9.273" Type="JumpStart" />
+        <Point X="12.964" Y="9.273" Type="JumpEnd" />
+        <Point X="9.75" Y="9.273" />
+        <Point X="9.75" Y="4.413" />
+        <Point X="7.995" Y="4.413" />
+        <Point X="7.995" Y="2.236" />
+        <Point X="7.25" Y="2.236" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAgAAABAAAAAAAABCAAAAEQAAAAAAAA=</HashCode>
+      <FileName>Movimentos\Rastreador.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="EstadoAtual" />
+      <Property Name="t" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.343" />
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.Movimento">
+    <Position X="4.75" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAEAEAA=</HashCode>
+      <FileName>Movimentos\Movimento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.Gesto">
+    <Position X="8.5" Y="0.5" Width="4" />
+    <AssociationLine Name="novoEstado" Type="EsqueletoUsuario.Movimentos.EstadoRastreamento" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.5" Y="2.688" />
+        <Point X="12.938" Y="2.688" />
+        <Point X="12.938" Y="7.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAAAoAABAAAAAAAAAAAACAAAggAAAAKA=</HashCode>
+      <FileName>Movimentos\Gesto.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="novoEstado" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EsqueletoUsuario.Movimentos.GestoQuadroChave">
+    <Position X="10" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Movimentos\GestoQuadroChave.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PoseChave" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EsqueletoUsuario.MainWindow">
+    <Position X="5.25" Y="9.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gEBAAAAAAgAAgCgAAAAAAAAGAAEAAAAAAIAAIAAAAAI=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EsqueletoUsuario.Auxiliar.ControleJogador">
+    <Position X="17.75" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAQAAgAAABAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controle\ControleJogador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EsqueletoUsuario.Movimentos.IRastreador">
+    <Position X="17.75" Y="4.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Movimentos\IRastreador.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="EsqueletoUsuario.Movimentos.EstadoRastreamento">
+    <Position X="12.25" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAABAAE=</HashCode>
+      <FileName>Movimentos\Enum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EsqueletoUsuario.Auxiliar.Controles">
+    <Position X="17" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgAAAAA=</HashCode>
+      <FileName>Controle\Controles.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EsqueletoUsuario.Auxiliar.StatusJogador">
+    <Position X="19.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controle\StatusJogador.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
