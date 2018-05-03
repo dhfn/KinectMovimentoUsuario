@@ -22,13 +22,19 @@ namespace EsqueletoUsuario.Movimentos.Poses
 
         protected override bool PosicaoValida(Skeleton esqueletoUsuario)
         {
+            if (novaAlturaChao)
+            {
+                alturaChao = esqueletoUsuario.Joints[JointType.FootLeft].Position.Y;
+                novaAlturaChao = !novaAlturaChao;
+            }
+
             Joint peEsquerdo = esqueletoUsuario.Joints[JointType.FootLeft];
             Joint peDireito = esqueletoUsuario.Joints[JointType.FootRight];
-            double alturaCorreta = -0.7;
+            double alturaCorreta = 0.7;
 
             //Console.WriteLine("pé esquerdo: ("+peEsquerdo.Position.X+", "+ peEsquerdo.Position.Y + ", "+ peEsquerdo.Position.Z + ")  "+ "pé direito: (" + peDireito.Position.X + ", " + peDireito.Position.Y + ", " + peDireito.Position.Z + ")");
-            bool peEsquerdoAlturaCorreta = peEsquerdo.Position.Y > alturaCorreta;
-            bool peDireitoAlturaCorreta = peDireito.Position.Y > alturaCorreta;
+            bool peEsquerdoAlturaCorreta = peEsquerdo.Position.Y > alturaCorreta + alturaChao;
+            bool peDireitoAlturaCorreta = peDireito.Position.Y > alturaCorreta + alturaChao;
 
             return peEsquerdoAlturaCorreta && peDireitoAlturaCorreta;
         }
