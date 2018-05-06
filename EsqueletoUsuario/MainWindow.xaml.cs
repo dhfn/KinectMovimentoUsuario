@@ -69,17 +69,32 @@ namespace EsqueletoUsuario
             //rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
             //rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
 
-            Rastreador<PoseAndarFrente> rastreadorPoseAndar = new Rastreador<PoseAndarFrente>();
-            rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
-            rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
+            Rastreador<PoseAndarFrente> rastreadorPoseAndarFrente = new Rastreador<PoseAndarFrente>();
+            rastreadorPoseAndarFrente.MovimentoIdentificado += PoseAndarFrenteIdentificada;
+            rastreadorPoseAndarFrente.MovimentoEmProgresso += PoseAndarFrenteEmProgresso;
+
+            Rastreador<PoseAndarTras> rastreadorPoseAndarTras = new Rastreador<PoseAndarTras>();
+            rastreadorPoseAndarTras.MovimentoIdentificado += PoseAndarTrasIdentificada;
+            rastreadorPoseAndarTras.MovimentoEmProgresso += PoseAndarTrasEmProgresso;
 
             Rastreador<PoseT> rastreadorPoseT = new Rastreador<PoseT>();
             rastreadorPoseT.MovimentoIdentificado += PoseTIdentificada;
             rastreadorPoseT.MovimentoEmProgresso += PoseTEmProgresso;
 
             rastreadores.Add(rastreadorPoseAgachar);
-            rastreadores.Add(rastreadorPoseAndar);
+            rastreadores.Add(rastreadorPoseAndarFrente);
+            rastreadores.Add(rastreadorPoseAndarTras);
             rastreadores.Add(rastreadorPoseT);
+        }
+
+        private void PoseAndarTrasIdentificada(object sender, EventArgs e)
+        {
+            txtControle.Text = "Andando para trás";
+        }
+
+        private void PoseAndarTrasEmProgresso(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
         }
 
         private void PoseTEmProgresso(object sender, EventArgs e)
@@ -108,12 +123,12 @@ namespace EsqueletoUsuario
             rastreadores.Add(rastreadorPosePulo);
         }
 
-        private void PoseAndarEmProgresso(object sender, EventArgs e)
+        private void PoseAndarFrenteEmProgresso(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
         }
 
-        private void PoseAndarIdentificada(object sender, EventArgs e)
+        private void PoseAndarFrenteIdentificada(object sender, EventArgs e)
         {
             controle.Andar();
             txtControle.Text = "Andando";
