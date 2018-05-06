@@ -94,7 +94,7 @@ namespace EsqueletoUsuario
 
         private void PoseAndarTrasEmProgresso(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            txtControle.Text = "";
         }
 
         private void PoseTEmProgresso(object sender, EventArgs e)
@@ -125,13 +125,13 @@ namespace EsqueletoUsuario
 
         private void PoseAndarFrenteEmProgresso(object sender, EventArgs e)
         {
-            //throw new NotImplementedException();
+            txtControle.Text = "";
         }
 
         private void PoseAndarFrenteIdentificada(object sender, EventArgs e)
         {
             controle.Andar();
-            txtControle.Text = "Andando";
+            txtControle.Text = "Andando para frente";
             
         }
 
