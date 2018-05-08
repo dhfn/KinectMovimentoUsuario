@@ -69,6 +69,28 @@ namespace EsqueletoUsuario.Auxiliar
                     texto.Text = "" + Math.Round(Util.CalcularProdutoEscalar(quadril, joelho, tornozelo));
                 }
 
+                if (articulacao.JointType == JointType.AnkleLeft || articulacao.JointType == JointType.AnkleRight)
+                {
+                    Joint pe;
+                    Joint tornozelo;
+                    Joint joelho;
+
+                    if (articulacao.JointType == JointType.AnkleLeft)
+                    {
+                        pe = esqueletoCompleto.Joints[JointType.FootLeft];
+                        tornozelo = esqueletoCompleto.Joints[JointType.AnkleLeft];
+                        joelho = esqueletoCompleto.Joints[JointType.KneeLeft];
+                    }
+                    else
+                    {
+                        pe = esqueletoCompleto.Joints[JointType.FootRight];
+                        tornozelo = esqueletoCompleto.Joints[JointType.AnkleRight];
+                        joelho = esqueletoCompleto.Joints[JointType.KneeRight];
+                    }
+
+                    texto.Text = "" + Math.Round(Util.CalcularProdutoEscalar(pe, tornozelo, joelho));
+                }
+
                 /*  
                  *  Define o texto que exibe a posição dos pés
                  */
