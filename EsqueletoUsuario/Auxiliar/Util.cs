@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Media3D;
 
 namespace EsqueletoUsuario.FuncoesBasicas
 {
@@ -31,10 +32,10 @@ namespace EsqueletoUsuario.FuncoesBasicas
             return resultadoGraus;
         }
 
-        public static double CalcularProdutoEscalar(Vector articulacao1, Vector articulacao2, Vector articulacao3)
+        public static double CalcularProdutoEscalar(Vector orientacao, Vector articulacao1, Vector articulacao2)
         {
-            Vector vetorV = CriarVetorEntreDoisPontos(articulacao1, articulacao2);
-            Vector vetorW = CriarVetorEntreDoisPontos(articulacao2, articulacao3);
+            Vector vetorV = orientacao;
+            Vector vetorW = CriarVetorEntreDoisPontos(articulacao1, articulacao2);
 
             double resultadoRadianos = Math.Acos(ProdutoVetores(vetorV, vetorW) / ProdutoModuloVetores(vetorV, vetorW));
             double resultadoGraus = resultadoRadianos * 180 / Math.PI;

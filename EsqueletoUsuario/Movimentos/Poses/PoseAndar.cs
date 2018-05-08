@@ -49,11 +49,11 @@ namespace EsqueletoUsuario.Movimentos.Poses
 
             if (foraDaCircunferenciaEsquerdo)
             {
-                direcaoCertaEsquerdo = DetectaDireção(peEsquerdo, esqueletoUsuario);
+                direcaoCertaEsquerdo = DetectaDireção(peDireito, peEsquerdo, esqueletoUsuario);
             }
             if (foraDaCircunferenciaDireito)
             {
-                direcaoCertaDireiro = DetectaDireção(peDireito, esqueletoUsuario);
+                direcaoCertaDireiro = DetectaDireção(peEsquerdo, peDireito, esqueletoUsuario);
             }
 
             // captura o esquelo atual para futura comparação
@@ -62,20 +62,20 @@ namespace EsqueletoUsuario.Movimentos.Poses
             return (foraDaCircunferenciaEsquerdo || foraDaCircunferenciaDireito) && (direcaoCertaEsquerdo || direcaoCertaDireiro);
         }
 
-        private bool DetectaDireção(Joint pe, Skeleton esqueleto)
+        private bool DetectaDireção(Joint peOrigem, Joint pe, Skeleton esqueleto)
         {
             Vector4 orientacao = esqueleto.BoneOrientations[JointType.HipCenter].AbsoluteRotation.Quaternion;
             Joint central = esqueleto.Joints[JointType.HipCenter];
 
-            Vector posicaoCentral = new Vector(central.Position.X, central.Position.Z);
             Vector orientacaoDoCorpo = new Vector(orientacao.X, orientacao.Z);
+            Vector posicaoPeOrigem = new Vector(peOrigem.Position.X, peOrigem.Position.Z);
             Vector posicaoPe = new Vector(pe.Position.X, pe.Position.Z);
 
-            double anguloDoPasso = Util.CalcularProdutoEscalar(orientacaoDoCorpo, posicaoCentral, posicaoPe);
+            double anguloDoPasso = Util.CalcularProdutoEscalar(orientacaoDoCorpo, posicaoPeOrigem, posicaoPe);
 
             Console.WriteLine("Angulo do passo: " + anguloDoPasso);
 
-            return anguloDoPasso > -90 && anguloDoPasso < 90;
+            return anguloDoPasso < 90;
         }
     }
 }
