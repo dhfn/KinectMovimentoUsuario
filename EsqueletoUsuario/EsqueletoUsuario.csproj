@@ -99,8 +99,6 @@
     <Compile Include="Movimentos\Pose.cs" />
     <Compile Include="Movimentos\Poses\PoseAgachar.cs" />
     <Compile Include="Movimentos\Poses\PoseAndar.cs" />
-    <Compile Include="Movimentos\Poses\PoseAndarFrente.cs" />
-    <Compile Include="Movimentos\Poses\PoseAndarTras.cs" />
     <Compile Include="Movimentos\Poses\PosePulo.cs" />
     <Compile Include="Movimentos\Poses\PoseT.cs" />
     <Compile Include="Movimentos\Rastreador.cs" />

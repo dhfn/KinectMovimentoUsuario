@@ -65,26 +65,37 @@ namespace EsqueletoUsuario
             Rastreador<PoseAgachar> rastreadorPoseAgachar = new Rastreador<PoseAgachar>();
             rastreadorPoseAgachar.MovimentoIdentificado += PoseAgacharIdentificada;
 
-            //Rastreador<PoseAndar> rastreadorPoseAndar = new Rastreador<PoseAndar>();
-            //rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
-            //rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
+            Rastreador<PoseAndar> rastreadorPoseAndar = new Rastreador<PoseAndar>();
+            rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
+            rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
 
-            Rastreador<PoseAndarFrente> rastreadorPoseAndarFrente = new Rastreador<PoseAndarFrente>();
-            rastreadorPoseAndarFrente.MovimentoIdentificado += PoseAndarFrenteIdentificada;
-            rastreadorPoseAndarFrente.MovimentoEmProgresso += PoseAndarFrenteEmProgresso;
+            //Rastreador<PoseAndarFrente> rastreadorPoseAndarFrente = new Rastreador<PoseAndarFrente>();
+            //rastreadorPoseAndarFrente.MovimentoIdentificado += PoseAndarFrenteIdentificada;
+            //rastreadorPoseAndarFrente.MovimentoEmProgresso += PoseAndarFrenteEmProgresso;
 
-            Rastreador<PoseAndarTras> rastreadorPoseAndarTras = new Rastreador<PoseAndarTras>();
-            rastreadorPoseAndarTras.MovimentoIdentificado += PoseAndarTrasIdentificada;
-            rastreadorPoseAndarTras.MovimentoEmProgresso += PoseAndarTrasEmProgresso;
+            //Rastreador<PoseAndarTras> rastreadorPoseAndarTras = new Rastreador<PoseAndarTras>();
+            //rastreadorPoseAndarTras.MovimentoIdentificado += PoseAndarTrasIdentificada;
+            //rastreadorPoseAndarTras.MovimentoEmProgresso += PoseAndarTrasEmProgresso;
 
             Rastreador<PoseT> rastreadorPoseT = new Rastreador<PoseT>();
             rastreadorPoseT.MovimentoIdentificado += PoseTIdentificada;
             rastreadorPoseT.MovimentoEmProgresso += PoseTEmProgresso;
 
             rastreadores.Add(rastreadorPoseAgachar);
-            rastreadores.Add(rastreadorPoseAndarFrente);
-            rastreadores.Add(rastreadorPoseAndarTras);
+            //rastreadores.Add(rastreadorPoseAndarFrente);
+            //rastreadores.Add(rastreadorPoseAndarTras);
+            rastreadores.Add(rastreadorPoseAndar);
             rastreadores.Add(rastreadorPoseT);
+        }
+
+        private void PoseAndarEmProgresso(object sender, EventArgs e)
+        {
+            txtControle.Text = "";
+        }
+
+        private void PoseAndarIdentificada(object sender, EventArgs e)
+        {
+            txtControle.Text = "Andando para frente";
         }
 
         private void PoseAndarTrasIdentificada(object sender, EventArgs e)
