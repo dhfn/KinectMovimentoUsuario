@@ -73,6 +73,10 @@ namespace EsqueletoUsuario
             rastreadorPoseAndarT.MovimentoIdentificado += PoseAndarTIdentificada;
             rastreadorPoseAndarT.MovimentoEmProgresso += PoseAndarTEmProgresso;
 
+            Rastreador<PoseT> rastreadorPoseT = new Rastreador<PoseT>();
+            rastreadorPoseT.MovimentoIdentificado += PoseTIdentificada;
+            rastreadorPoseT.MovimentoEmProgresso += PoseTEmProgresso;
+
             //Rastreador<PoseAndarFrente> rastreadorPoseAndarFrente = new Rastreador<PoseAndarFrente>();
             //rastreadorPoseAndarFrente.MovimentoIdentificado += PoseAndarFrenteIdentificada;
             //rastreadorPoseAndarFrente.MovimentoEmProgresso += PoseAndarFrenteEmProgresso;
@@ -81,13 +85,9 @@ namespace EsqueletoUsuario
             //rastreadorPoseAndarTras.MovimentoIdentificado += PoseAndarTrasIdentificada;
             //rastreadorPoseAndarTras.MovimentoEmProgresso += PoseAndarTrasEmProgresso;
 
-            Rastreador<PoseT> rastreadorPoseT = new Rastreador<PoseT>();
-            rastreadorPoseT.MovimentoIdentificado += PoseTIdentificada;
-            rastreadorPoseT.MovimentoEmProgresso += PoseTEmProgresso;
-
-            rastreadores.Add(rastreadorPoseAgachar);
             //rastreadores.Add(rastreadorPoseAndarFrente);
             //rastreadores.Add(rastreadorPoseAndarTras);
+            rastreadores.Add(rastreadorPoseAgachar);
             rastreadores.Add(rastreadorPoseAndarF);
             rastreadores.Add(rastreadorPoseT);
         }
