@@ -65,9 +65,13 @@ namespace EsqueletoUsuario
             Rastreador<PoseAgachar> rastreadorPoseAgachar = new Rastreador<PoseAgachar>();
             rastreadorPoseAgachar.MovimentoIdentificado += PoseAgacharIdentificada;
 
-            Rastreador<PoseAndar> rastreadorPoseAndar = new Rastreador<PoseAndar>();
-            rastreadorPoseAndar.MovimentoIdentificado += PoseAndarIdentificada;
-            rastreadorPoseAndar.MovimentoEmProgresso += PoseAndarEmProgresso;
+            Rastreador<PoseAndarF> rastreadorPoseAndarF = new Rastreador<PoseAndarF>();
+            rastreadorPoseAndarF.MovimentoIdentificado += PoseAndarFIdentificada;
+            rastreadorPoseAndarF.MovimentoEmProgresso += PoseAndarFEmProgresso;
+
+            Rastreador<PoseAndarT> rastreadorPoseAndarT = new Rastreador<PoseAndarT>();
+            rastreadorPoseAndarT.MovimentoIdentificado += PoseAndarTIdentificada;
+            rastreadorPoseAndarT.MovimentoEmProgresso += PoseAndarTEmProgresso;
 
             //Rastreador<PoseAndarFrente> rastreadorPoseAndarFrente = new Rastreador<PoseAndarFrente>();
             //rastreadorPoseAndarFrente.MovimentoIdentificado += PoseAndarFrenteIdentificada;
@@ -84,16 +88,26 @@ namespace EsqueletoUsuario
             rastreadores.Add(rastreadorPoseAgachar);
             //rastreadores.Add(rastreadorPoseAndarFrente);
             //rastreadores.Add(rastreadorPoseAndarTras);
-            rastreadores.Add(rastreadorPoseAndar);
+            rastreadores.Add(rastreadorPoseAndarF);
             rastreadores.Add(rastreadorPoseT);
         }
 
-        private void PoseAndarEmProgresso(object sender, EventArgs e)
+        private void PoseAndarTEmProgresso(object sender, EventArgs e)
         {
             txtControle.Text = "";
         }
 
-        private void PoseAndarIdentificada(object sender, EventArgs e)
+        private void PoseAndarTIdentificada(object sender, EventArgs e)
+        {
+            txtControle.Text = "Andando para trás";
+        }
+
+        private void PoseAndarFEmProgresso(object sender, EventArgs e)
+        {
+            txtControle.Text = "";
+        }
+
+        private void PoseAndarFIdentificada(object sender, EventArgs e)
         {
             txtControle.Text = "Andando para frente";
         }

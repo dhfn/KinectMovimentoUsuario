@@ -10,11 +10,11 @@ using System.Windows;
 
 namespace EsqueletoUsuario.Movimentos.Poses
 {
-    public class PoseAndar : Pose
+    public class PoseAndarT : Pose
     {
         private static Skeleton esqueletoAnterior = null;
 
-        public PoseAndar()
+        public PoseAndarT()
         {
             this.Nome = "PosePulo";
             this.QuadroIdentificacao = 1;
@@ -75,7 +75,7 @@ namespace EsqueletoUsuario.Movimentos.Poses
 
             Console.WriteLine("Angulo do passo: " + anguloDoPasso);
 
-            return anguloDoPasso < 90;
+            return anguloDoPasso > 90;
         }
     }
 }
