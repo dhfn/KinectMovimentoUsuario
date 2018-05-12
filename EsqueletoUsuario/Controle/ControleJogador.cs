@@ -13,18 +13,37 @@ namespace EsqueletoUsuario.Auxiliar
         private StatusJogador status;
         public String strStatus;
 
+        private int contMudancaDirecao;
+        private int contRepouso;
+        private int maxFramesMudaDirecao;
+        private int maxFramesRepouso;
+
         public ControleJogador()
         {
             controle = new BitArray(4);
             status = new StatusJogador();
+
+            contMudancaDirecao = 0;
+            contRepouso = 0;
+            maxFramesMudaDirecao = 20;
+            maxFramesRepouso = 20;
         }
 
-        public void Andar()
+        public void AndarFrente()
         {
             if(!controle[(int)Controles.PULAR] && !controle[(int)Controles.AGACHAR])
             {
-                Console.WriteLine("Andando");
-                strStatus = "Andando";
+                Console.WriteLine("Andando para frente");
+                strStatus = "Andando para frente";
+            }
+        }
+
+        public void AndarTras()
+        {
+            if (!controle[(int)Controles.PULAR] && !controle[(int)Controles.AGACHAR])
+            {
+                Console.WriteLine("Andando para trás");
+                strStatus = "Andando para trás";
             }
         }
 

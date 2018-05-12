@@ -155,7 +155,7 @@ namespace EsqueletoUsuario
 
         private void PoseAndarFrenteIdentificada(object sender, EventArgs e)
         {
-            controle.Andar();
+            controle.AndarFrente();
             txtControle.Text = "Andando para frente";
             
         }
