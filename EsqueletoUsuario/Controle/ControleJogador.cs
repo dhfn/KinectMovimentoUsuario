@@ -13,18 +13,18 @@ namespace EsqueletoUsuario.Auxiliar
         private StatusJogador status;
         public String strStatus;
 
-        private int contMudancaDirecao;
-        private int contRepouso;
+        private int contFramesMudancaDirecao;
+        private int contFramesRepouso;
         private int maxFramesMudaDirecao;
         private int maxFramesRepouso;
 
         public ControleJogador()
-        {
+        {                 
             controle = new BitArray(4);
             status = new StatusJogador();
 
-            contMudancaDirecao = 0;
-            contRepouso = 0;
+            contFramesMudancaDirecao = 0;
+            contFramesRepouso = 0;
             maxFramesMudaDirecao = 20;
             maxFramesRepouso = 20;
         }
@@ -33,8 +33,23 @@ namespace EsqueletoUsuario.Auxiliar
         {
             if(!controle[(int)Controles.PULAR] && !controle[(int)Controles.AGACHAR])
             {
-                Console.WriteLine("Andando para frente");
-                strStatus = "Andando para frente";
+                if (controle[(int)Controles.ANDART])
+                {
+                    if (contFramesMudancaDirecao <= maxFramesMudaDirecao)
+                    {
+                        contFramesMudancaDirecao++;
+                    }
+                    else
+                    {
+                        MudarDirecao();
+                    }
+                }
+                else
+                {
+                    MudarDirecao();
+                    strStatus = "Andando para frente";
+                    Console.WriteLine(strStatus);
+                }
             }
         }
 
@@ -42,8 +57,30 @@ namespace EsqueletoUsuario.Auxiliar
         {
             if (!controle[(int)Controles.PULAR] && !controle[(int)Controles.AGACHAR])
             {
-                Console.WriteLine("Andando para trás");
+                if ( controle[(int)Controles.ANDARF] )
+                {
+                    if (contFramesMudancaDirecao < maxFramesMudaDirecao)
+                    {
+                        contFramesMudancaDirecao++;
+                    }
+                    else
+                    {
+                        MudarDirecao();
+                    }
+                }
+                else
+                {
+                    MudarDirecao();
+                    strStatus = "Andando para trás";
+                    Console.WriteLine(strStatus);
+                    
+                }
+            }
+
+            if (!controle[(int)Controles.PULAR] && !controle[(int)Controles.AGACHAR])
+            {
                 strStatus = "Andando para trás";
+                Console.WriteLine(strStatus);
             }
         }
 
@@ -52,21 +89,28 @@ namespace EsqueletoUsuario.Auxiliar
             if (!controle[(int)Controles.PULAR])
             {
                 controle[(int)Controles.AGACHAR] = true;
-                Console.WriteLine("Agachado");
                 strStatus = "Agachando";
+                Console.WriteLine(strStatus);
             }
         }
 
         public void Pular()
         {
             controle[(int)Controles.PULAR] = true;
-            Console.WriteLine("Pulo");
             strStatus = "Pulando";
+            Console.WriteLine(strStatus);
         }
 
         private void EnviarControle()
         {
             //enviar this.controle para função de envio pela rede;
+        }
+
+        private void MudarDirecao()
+        {
+            contFramesMudancaDirecao = 0;
+            controle[(int)Controles.ANDARF] = !controle[(int)Controles.ANDARF];
+            controle[(int)Controles.ANDART] = !controle[(int)Controles.ANDART];
         }
     }
 }

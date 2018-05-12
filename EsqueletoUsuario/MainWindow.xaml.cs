@@ -100,7 +100,8 @@ namespace EsqueletoUsuario
 
         private void PoseAndarTIdentificada(object sender, EventArgs e)
         {
-            txtControle.Text = "Andando para trás";
+            controle.AndarTras();
+            txtControle.Text = controle.strStatus;
         }
 
         private void PoseAndarFEmProgresso(object sender, EventArgs e)
@@ -110,17 +111,8 @@ namespace EsqueletoUsuario
 
         private void PoseAndarFIdentificada(object sender, EventArgs e)
         {
-            txtControle.Text = "Andando para frente";
-        }
-
-        private void PoseAndarTrasIdentificada(object sender, EventArgs e)
-        {
-            txtControle.Text = "Andando para trás";
-        }
-
-        private void PoseAndarTrasEmProgresso(object sender, EventArgs e)
-        {
-            txtControle.Text = "";
+            controle.AndarFrente();
+            txtControle.Text = controle.strStatus;
         }
 
         private void PoseTEmProgresso(object sender, EventArgs e)
@@ -149,28 +141,16 @@ namespace EsqueletoUsuario
             rastreadores.Add(rastreadorPosePulo);
         }
 
-        private void PoseAndarFrenteEmProgresso(object sender, EventArgs e)
-        {
-            txtControle.Text = "";
-        }
-
-        private void PoseAndarFrenteIdentificada(object sender, EventArgs e)
-        {
-            controle.AndarFrente();
-            txtControle.Text = "Andando para frente";
-            
-        }
-
         private void PosePuloIdentificada(object sender, EventArgs e)
         {
             controle.Pular();
-            txtControle.Text = "Pulando";
+            txtControle.Text = controle.strStatus;
         }
 
         private void PoseAgacharIdentificada(object sender, EventArgs e)
         {
             controle.Agachar();
-            txtControle.Text = "Agachando";
+            txtControle.Text = controle.strStatus;
         }
 
         private void kinect_AllFramesReady(object sender, AllFramesReadyEventArgs e)

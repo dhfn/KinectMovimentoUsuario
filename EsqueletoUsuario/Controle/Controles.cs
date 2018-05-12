@@ -8,8 +8,9 @@ namespace EsqueletoUsuario.Auxiliar
 {
     public enum Controles : int
     {
-        ANDAR = 0,
-        PULAR = 1,
-        AGACHAR = 2,
+        ANDARF = 0,
+        ANDART = 1,
+        PULAR = 2,
+        AGACHAR = 3,
     }
 }
