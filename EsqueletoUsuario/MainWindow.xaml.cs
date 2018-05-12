@@ -89,6 +89,7 @@ namespace EsqueletoUsuario
             //rastreadores.Add(rastreadorPoseAndarTras);
             rastreadores.Add(rastreadorPoseAgachar);
             rastreadores.Add(rastreadorPoseAndarF);
+            rastreadores.Add(rastreadorPoseAndarT);
             rastreadores.Add(rastreadorPoseT);
         }
 
