@@ -50,7 +50,7 @@ namespace EsqueletoUsuario
         private void InicializarKinect(KinectSensor kinectSensor)
         {
             kinect = kinectSensor;
-            //slider.Value = kinect.ElevationAngle;
+            slider.Value = kinect.ElevationAngle;
 
             kinect.DepthStream.Enable();
             kinect.SkeletonStream.Enable();
@@ -77,16 +77,6 @@ namespace EsqueletoUsuario
             rastreadorPoseT.MovimentoIdentificado += PoseTIdentificada;
             rastreadorPoseT.MovimentoEmProgresso += PoseTEmProgresso;
 
-            //Rastreador<PoseAndarFrente> rastreadorPoseAndarFrente = new Rastreador<PoseAndarFrente>();
-            //rastreadorPoseAndarFrente.MovimentoIdentificado += PoseAndarFrenteIdentificada;
-            //rastreadorPoseAndarFrente.MovimentoEmProgresso += PoseAndarFrenteEmProgresso;
-
-            //Rastreador<PoseAndarTras> rastreadorPoseAndarTras = new Rastreador<PoseAndarTras>();
-            //rastreadorPoseAndarTras.MovimentoIdentificado += PoseAndarTrasIdentificada;
-            //rastreadorPoseAndarTras.MovimentoEmProgresso += PoseAndarTrasEmProgresso;
-
-            //rastreadores.Add(rastreadorPoseAndarFrente);
-            //rastreadores.Add(rastreadorPoseAndarTras);
             rastreadores.Add(rastreadorPoseAgachar);
             rastreadores.Add(rastreadorPoseAndarF);
             rastreadores.Add(rastreadorPoseAndarT);
