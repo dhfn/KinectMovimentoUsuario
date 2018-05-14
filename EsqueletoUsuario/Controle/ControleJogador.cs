@@ -46,7 +46,7 @@ namespace EsqueletoUsuario.Auxiliar
                 }
                 else
                 {
-                    MudarDirecao();
+                    controle[(int)Controles.ANDARF] = true;
                     strStatus = "Andando para frente";
                     Console.WriteLine(strStatus);
                 }
@@ -70,17 +70,11 @@ namespace EsqueletoUsuario.Auxiliar
                 }
                 else
                 {
-                    MudarDirecao();
+                    controle[(int)Controles.ANDART] = true;
                     strStatus = "Andando para trás";
                     Console.WriteLine(strStatus);
                     
                 }
-            }
-
-            if (!controle[(int)Controles.PULAR] && !controle[(int)Controles.AGACHAR])
-            {
-                strStatus = "Andando para trás";
-                Console.WriteLine(strStatus);
             }
         }
 
