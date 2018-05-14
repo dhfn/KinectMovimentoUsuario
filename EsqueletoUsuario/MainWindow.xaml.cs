@@ -30,8 +30,6 @@ namespace EsqueletoUsuario
         List<IRastreador> rastreadores;
         ControleJogador controle;
 
-        double alturaChao;
-
         public MainWindow()
         {
             InitializeComponent();
